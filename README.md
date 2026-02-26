@@ -5,8 +5,9 @@ Welcome to the wedding website for Clark Jayson P. Sedantes and Jovie Rose G. Pa
 ## 🌿 Features
 
 - Beautiful sage green and olive green color scheme
+- Compact and clean navigation menu
 - Fully responsive design (mobile and desktop)
-- Smooth scroll animations
+- Smooth performance without heavy animations
 - Complete wedding details
 - Entourage and sponsors listings
 - Interactive navigation
@@ -28,7 +29,7 @@ Welcome to the wedding website for Clark Jayson P. Sedantes and Jovie Rose G. Pa
    cd CJJR_Wedding
    # Copy all files (index.html, style.css, script.js) to this folder
    git add .
-   git commit -m "Initial wedding website"
+   git commit -m "Updated wedding website with smaller menu bar"
    git push origin main
    ```
 
@@ -48,7 +49,7 @@ Welcome to the wedding website for Clark Jayson P. Sedantes and Jovie Rose G. Pa
 ## 🎨 Customization
 
 ### Update Hero Photo
-Replace the hero background image URL in `style.css` (line ~180):
+Replace the hero background image URL in `style.css` (around line 145):
 ```css
 background: linear-gradient(rgba(85, 107, 47, 0.4), rgba(156, 175, 136, 0.5)),
             url('YOUR_GOOGLE_DRIVE_IMAGE_LINK') center/cover no-repeat;
@@ -66,6 +67,15 @@ Replace the QR placeholder in `index.html` with your actual QR code image:
     <img src="path/to/your/qr-code.png" alt="QR Code for directions" style="width: 100%; height: 100%; border-radius: 15px;">
 </div>
 ```
+
+## 🎯 Changes Made
+
+- **Smaller Menu Bar**: Reduced navigation height from 1rem padding to 0.5rem
+- **Compact Logo**: Reduced logo size from 2.5rem to 1.8rem
+- **Smaller Nav Links**: Reduced font size from 0.95rem to 0.85rem
+- **Removed Heavy Animations**: Removed AOS library and data-aos attributes
+- **Smoother Performance**: Lighter JavaScript without animation libraries
+- **Clean Look**: Maintained elegant design with better performance
 
 ## 🎯 Color Scheme
 
@@ -86,9 +96,10 @@ Replace the QR placeholder in `index.html` with your actual QR code image:
 ## 📝 Notes
 
 - All fonts are loaded from Google Fonts
-- AOS library is used for scroll animations
+- No heavy animation libraries
 - Fully responsive for all screen sizes
 - No backend required - pure static HTML/CSS/JS
+- Optimized for fast loading
 
 ## 💒 Wedding Details
 
