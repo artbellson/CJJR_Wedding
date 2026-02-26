@@ -1,4 +1,4 @@
-// Initialize AOS (Animate On Scroll)
+// Initialize AOS
 AOS.init({
     duration: 1000,
     once: true,
@@ -27,7 +27,7 @@ musicToggle.addEventListener('click', () => {
             isPlaying = true;
         }).catch(error => {
             console.log('Music play error:', error);
-            alert('Unable to play music. Please check if audio file exists in public folder.');
+            alert('Unable to play music. Please check if audio.mp3 exists in root folder.');
         });
     }
 });
@@ -88,5 +88,7 @@ document.addEventListener('click', (e) => {
 });
 
 console.log('CJJR Wedding Website Loaded Successfully! 💒');
-console.log('Date: April 23, 2026 at 3:00 PM');
-console.log('Using local files: public/image.png and public/audio.mp3');
+console.log('✅ Names display with line breaks: Clark Jayson <br> & <br> Jovie Rose');
+console.log('✅ Real QR code for Google Maps');
+console.log('✅ Updated dress code statement');
+console.log('📱 Files needed: image.png & audio.mp3 in root folder');

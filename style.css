@@ -191,12 +191,12 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Hero Section - WITH LOCAL IMAGE */
+/* Hero Section */
 .hero {
     height: 100vh;
     min-height: 600px;
     background: linear-gradient(rgba(85, 107, 47, 0.4), rgba(156, 175, 136, 0.5)),
-                url('public/image.png') center/cover no-repeat;
+                url('image.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,16 +236,17 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 7vw, 5.5rem);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 1.5rem;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .names span {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: var(--gold-accent);
-    margin: 0 1rem;
+    display: inline-block;
+    margin: 0.3rem 0;
 }
 
 .divider {
@@ -456,6 +457,7 @@ nav {
     line-height: 1.6;
 }
 
+/* Map Section with Real QR Code */
 .map-section {
     text-align: center;
     padding: 3rem 0;
@@ -468,33 +470,32 @@ nav {
     margin-bottom: 2rem;
 }
 
-.qr-placeholder {
+.qr-container {
     margin: 2rem 0;
-}
-
-.qr-box {
-    width: 250px;
-    height: 250px;
-    background: var(--sage-green);
-    margin: 0 auto;
-    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: var(--white);
+    gap: 1rem;
+}
+
+.qr-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
     box-shadow: 0 10px 40px rgba(107, 142, 35, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.qr-box p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.qr-image:hover {
+    transform: scale(1.05);
 }
 
-.qr-box small {
-    font-size: 1rem;
-    opacity: 0.9;
+.qr-text {
+    font-weight: 600;
+    color: var(--olive-green);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
 .map-button {
@@ -536,9 +537,9 @@ nav {
 
 .entourage-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -548,29 +549,30 @@ nav {
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .entourage-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(107, 142, 35, 0.2);
 }
 
 .entourage-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: var(--olive-green);
+    color: var(--olive-dark);
     margin-bottom: 1rem;
 }
 
 .entourage-card p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-dark);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .secondary-entourage {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -585,11 +587,9 @@ nav {
 .entourage-group h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    color: var(--olive-green);
+    color: var(--olive-dark);
+    margin-bottom: 1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--sage-light);
 }
 
 .entourage-group ul {
@@ -597,11 +597,11 @@ nav {
 }
 
 .entourage-group li {
-    padding: 0.6rem 0;
+    padding: 0.7rem 0;
     color: var(--text-dark);
     font-size: 1rem;
     text-align: center;
-    border-bottom: 1px solid var(--sage-lighter);
+    border-bottom: 1px solid var(--sage-light);
 }
 
 .entourage-group li:last-child {
@@ -624,12 +624,10 @@ nav {
 
 .party-column h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--olive-dark);
+    margin-bottom: 1.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px solid var(--sage-green);
 }
 
 .party-column ul {
@@ -637,15 +635,20 @@ nav {
 }
 
 .party-column li {
-    padding: 0.8rem 0;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.7rem;
+    background: var(--sage-lighter);
+    border-left: 4px solid var(--olive-green);
+    border-radius: 8px;
     color: var(--text-dark);
     font-size: 1.05rem;
-    text-align: center;
-    border-bottom: 1px solid var(--sage-lighter);
+    transition: all 0.3s ease;
 }
 
-.party-column li:last-child {
-    border-bottom: none;
+.party-column li:hover {
+    background: var(--sage-light);
+    transform: translateX(8px);
+    border-left-width: 6px;
 }
 
 .flower-ring-bearers {
@@ -664,11 +667,9 @@ nav {
 .bearer-group h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    color: var(--olive-green);
+    color: var(--olive-dark);
+    margin-bottom: 1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--sage-light);
 }
 
 .bearer-group ul {
@@ -676,11 +677,11 @@ nav {
 }
 
 .bearer-group li {
-    padding: 0.6rem 0;
+    padding: 0.7rem 0;
     color: var(--text-dark);
     font-size: 0.95rem;
     text-align: center;
-    border-bottom: 1px solid var(--sage-lighter);
+    border-bottom: 1px solid var(--sage-light);
 }
 
 .bearer-group li:last-child {
@@ -760,7 +761,7 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
     .music-player {
         bottom: 20px;
@@ -768,13 +769,9 @@ footer {
         padding: 10px 15px;
     }
 
-    .music-toggle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .music-text {
-        font-size: 0.8rem;
+    .qr-image {
+        width: 220px;
+        height: 220px;
     }
 
     .nav-links {
@@ -833,10 +830,6 @@ footer {
     .names {
         font-size: 2.5rem;
     }
-
-    .story-text p {
-        text-align: left;
-    }
 }
 
 @media (max-width: 480px) {
@@ -847,14 +840,9 @@ footer {
         gap: 8px;
     }
 
-    .music-toggle {
-        width: 35px;
-        height: 35px;
-    }
-
-    .music-toggle svg {
-        width: 16px;
-        height: 16px;
+    .qr-image {
+        width: 200px;
+        height: 200px;
     }
 
     nav {
@@ -871,10 +859,5 @@ footer {
 
     .logo {
         font-size: 1.5rem;
-    }
-
-    .qr-box {
-        width: 200px;
-        height: 200px;
     }
 }
